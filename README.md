@@ -1,6 +1,6 @@
 # Hotel Selector
 
-React/typescript project implementing a simple API functionality to fetch a dummy hotel and do some selections on it.
+React/typescript project implementing a simple API functionality to fetch a dummy hotels data and do some selections on it.
 
 ## Installing
 
