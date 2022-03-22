@@ -1,5 +1,5 @@
 import { Console } from 'console';
-import React, { useEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { Rating } from 'react-simple-star-rating';
 import { getRoomsData } from '../Api/Api';
 import { Room } from './Room';
@@ -30,14 +30,14 @@ function HotelCard({ id, name, address1, address2, rating, selectedRating, image
     const [multipleImagesControls, setMultipleImagesControls] = useState(true);
 
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         async function loadRooms() {
             if (images.length <= 1) {
                 setMultipleImagesControls(false);
             }
-            setLoading(true);
             setEmpty(false);
             const data = await getRoomsData.get(id);
+            console.log(data)
             data.rooms.forEach((room: Room) => {
                 if (room.occupancy.maxOverall == undefined) {
                     room.occupancy.maxOverall = room.occupancy.maxAdults + room.occupancy.maxChildren;

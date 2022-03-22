@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import './App.css';
 import { getHotelsData, getRoomsData } from './HotelProject/Api/Api';
 import { Hotel } from './HotelProject/Hotels/Hotel';
@@ -43,7 +43,7 @@ function App() {
     }
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     async function loadHotels() {
       setLoading(true);
       const data = await getHotelsData.get();
